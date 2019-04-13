@@ -1,29 +1,32 @@
 ## Overview
 
-[Chords](https://en.wikipedia.org/wiki/Chord_(music) are an important pain in the ass.
-The point of this project is to facilitate learning about them.
+[Chords](https://en.wikipedia.org/wiki/Chord_(music)) are an important pain in the ass.
+The point of this project is to facilitate learning about them while also exploring a variety of tools.
 
 ## Getting Started
 
-Run`npm install` and `npm start`. The server will be available at `localhost:8080`.
+Run`npm install` in the client directory.
 
 ## Testing
 
-Run `npm test`.
+Run `npm test` in the client directory.
 
 ## Deploying
 
-Run `npm run deploy`
+Run `npm run deploy`in the client directory. 
+This will generate public assets and put them in `server/public`.
+
+Then, run `cargo run` in the server directory. The app will be available at `localhost:8000`.
 
 ## Technologies
 
-####Server
+#### Server
 * [Rust](https://www.rust-lang.org/) - Programming Language
 * [Cargo](https://crates.io/) - Package Manager
 * [Rocket](https://rocket.rs/) - Web Server Framework
 * [Docker](https://www.docker.com/) - Deployment Environment
 
-####Client
+#### Client
 * [Typescript](https://www.typescriptlang.org/) - Programming Language
 * [npm](https://www.npmjs.com/) - Package Manager
 * [Webpack](https://webpack.js.org/) - Fancy File Transformer
