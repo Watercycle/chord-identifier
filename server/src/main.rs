@@ -15,6 +15,7 @@ use std::env;
 #[get("/")]
 fn index() -> NamedFile {
     let path = Path::new("public/").join("index.html");
+    println!("Tried to access file at: '{}'", path);
      NamedFile::open(path).expect("You probably need to run `npm run build`.")
 }
 
