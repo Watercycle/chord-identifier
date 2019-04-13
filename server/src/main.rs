@@ -33,6 +33,7 @@ fn files(file: PathBuf, cache: State<Cache>) -> CachedFile {
 /// Configure Rocket to serve on the port requested by Heroku.
 fn configure() -> Config {
     let mut config = Config::active().expect("could not load configuration");
+
     if let Ok(port_str) = env::var("PORT") {
         let port = port_str.parse().expect("could not parse PORT");
         config.set_port(port);
@@ -47,8 +48,7 @@ fn main() {
         .build()
         .unwrap();
 
-    rocket::ignite()
-        .custom(configure())
+    rocket::custom(configure())
         .attach(Gzip)
         .manage(cache)
         .mount("/", routes![index, service_worker, files])
