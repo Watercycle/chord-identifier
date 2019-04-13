@@ -1,1 +1,1 @@
-web: ROCKET_ENV=prod ./server/target/release/chord_identifier
+web: cd server && ROCKET_ENV=prod ./target/release/chord_identifier
