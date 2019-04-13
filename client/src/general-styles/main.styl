@@ -1,0 +1,144 @@
+@import './reset'
+@import './colors'
+@import './keyboard'
+@import './scrollbar'
+
+// see .app
+html, body, #root, .app
+  width: 100vw
+  height: 100vh
+  background: #373737
+
+// this is the effective 'body'
+.app
+  display: grid
+  grid-template: 'head head' \
+                 'main side'
+  grid-template-columns: 75% 25%
+  grid-template-rows: min-content 1fr
+
+// main layout
+.header
+  grid-area: head
+
+  display: flex
+  align-items: center
+
+  padding: 1vh 1vw
+
+  background: $primary-ui-color
+  border-bottom: thin solid lighten($primary-ui-color, 10%)
+
+
+.main
+  grid-area: main
+
+  display: grid;
+  justify-items: center
+  align-items: center
+
+  padding: 16px
+  background-image: url("../static/footer-lodyas.png")
+  background-repeat: repeat
+
+.predictions
+  grid-area: side
+  background: $primary-ui-color
+
+///////////////////////////////////////////////////////////////////////////
+
+.logo
+  font-family: 'Comic Sans MS'
+  font-size: calc(0.9rem + 1.3vh)
+  color: $primary-text-color
+  text-shadow: 0 3px 6px rgba(150, 170, 255, 0.16)
+
+//
+
+.predictions
+  display: flex
+  flex-direction: column
+  overflow: hidden
+
+.top-chord
+  flex: 2
+
+  display: grid
+  justify-items: center
+  gap: 3vh
+
+  min-height: max-content
+  padding: 2vh 3vw 4vh 3vw
+
+  background: darken($primary-ui-color, 10%)
+
+.possible-chords
+  flex: 4
+
+  display: grid
+  row-gap: 3vh
+
+  padding: 2vh 3vw
+
+  overflow-y: auto
+
+
+
+.top-chord .certainty
+  font-size: calc(0.3rem + 1.8vw)
+  font-family: 'Comic Sans MS'
+  color: $primary-text-color
+
+//
+
+.prediction
+  width: 100%
+  line-height: 0 // box sizing issues
+
+.prediction .info
+  position: relative
+  display: flex
+  justify-content: center
+  margin-bottom: 0.4rem
+
+.prediction .chord-name
+  font-family: 'Comic Sans MS'
+  font-size: calc(0.3rem + 1.4vw)
+  line-height: 1.2
+  color: $secondary-text-color
+
+  sup
+    font-size: 0.6em
+
+  sup sup
+    font-size: 1em
+
+  .root
+    display: inline-block
+    font-size: 0.5em
+    transform: translate(-0.10em, -0.15em)
+
+.prediction .inversion
+  position: absolute
+  bottom: 0
+  right: 0
+  font-family: 'Comic Sans MS'
+  font-size: 0.8rem
+  line-height: 1.2
+  color: $secondary-text-color
+
+  // hide inversion tag if screen too small
+  @media (max-width: 1350px)
+    display: none
+
+// base style
+.main .keyboard
+  width: 90%
+
+// prevent gaps from showing mouse.
+.predictions .keyboard
+  cursor: pointer
+
+@media (max-width: 1000px)
+  .predictions .keyboard .note-name
+    display: none

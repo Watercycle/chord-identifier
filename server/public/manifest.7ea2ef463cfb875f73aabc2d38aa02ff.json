@@ -1,0 +1,42 @@
+{
+  "icons": [
+    {
+      "src": "icons/icon_512x512.e9fb4e7e6145d4b3bc01e3622ec237af.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon_384x384.2477b4c248f71b9bb574514a3d538893.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon_256x256.d6bcd8d6efd447ba7c17a9a389f5abbb.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon_192x192.99aab83421275729d96a22c5caf21cc9.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon_128x128.090975515d766b1b085feb29bafaadd4.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon_96x96.8f9977ba7b4427da2ff39ec8f38c5ea7.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "Chord Identifier",
+  "short_name": "CI",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "Get good at identifying piano chords!",
+  "theme_color": "#373737",
+  "background_color": "#373737"
+}

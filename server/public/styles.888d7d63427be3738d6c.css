@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.keyboard .backing {
+  fill: #6d6e74;
+}
+.keyboard .white-key {
+  fill: #d1d1d1;
+}
+.keyboard .note-name {
+  font-size: 48px;
+  fill: #b4b4b4;
+  font-family: Verdana;
+}
+.keyboard .black-key {
+  fill: #090909;
+}
+.keyboard {
+  width: 100%;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+.keyboard .note-name {
+  pointer-events: none;
+}
+.keyboard .white-key,
+.keyboard .black-key {
+  cursor: pointer;
+}
+.keyboard .white-key.pressed {
+  fill: #00f;
+}
+.keyboard .white-key.pressed + .note-name {
+  fill: #cbcbcb;
+}
+.keyboard .black-key.pressed {
+  fill: #00008b;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 3px;
+}
+::-webkit-scrollbar-button {
+  background-color: #666;
+}
+::-webkit-scrollbar-track {
+  background-color: #646464;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: #000;
+}
+::-webkit-scrollbar-thumb {
+  height: 50px;
+  background-color: #666;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-corner {
+  background-color: #646464;
+}
+::-webkit-resizer {
+  background-color: #666;
+}
+html,
+body,
+#root,
+.app {
+  width: 100vw;
+  height: 100vh;
+  background: #373737;
+}
+.app {
+  display: grid;
+  grid-template: 'head head' 'main side';
+  grid-template-columns: 75% 25%;
+  grid-template-rows: min-content 1fr;
+}
+.header {
+  grid-area: head;
+  display: flex;
+  align-items: center;
+  padding: 1vh 1vw;
+  background: #252525;
+  border-bottom: thin solid #3b3b3b;
+}
+.main {
+  grid-area: main;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  padding: 16px;
+  background-image: url(9a30e6c6c75344e5bd217bbe9720ef3e.png);
+  background-repeat: repeat;
+}
+.predictions {
+  grid-area: side;
+  background: #252525;
+}
+.logo {
+  font-family: 'Comic Sans MS';
+  font-size: calc(0.9rem + 1.3vh);
+  color: #cecece;
+  text-shadow: 0 3px 6px rgba(150,170,255,0.16);
+}
+.predictions {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.top-chord {
+  flex: 2;
+  display: grid;
+  justify-items: center;
+  gap: 3vh;
+  min-height: max-content;
+  padding: 2vh 3vw 4vh 3vw;
+  background: #212121;
+}
+.possible-chords {
+  flex: 4;
+  display: grid;
+  row-gap: 3vh;
+  padding: 2vh 3vw;
+  overflow-y: auto;
+}
+.top-chord .certainty {
+  font-size: calc(0.3rem + 1.8vw);
+  font-family: 'Comic Sans MS';
+  color: #cecece;
+}
+.prediction {
+  width: 100%;
+  line-height: 0;
+}
+.prediction .info {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.4rem;
+}
+.prediction .chord-name {
+  font-family: 'Comic Sans MS';
+  font-size: calc(0.3rem + 1.4vw);
+  line-height: 1.2;
+  color: #9e9e9e;
+}
+.prediction .chord-name sup {
+  font-size: 0.6em;
+}
+.prediction .chord-name sup sup {
+  font-size: 1em;
+}
+.prediction .chord-name .root {
+  display: inline-block;
+  font-size: 0.5em;
+  transform: translate(-0.1em, -0.15em);
+}
+.prediction .inversion {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-family: 'Comic Sans MS';
+  font-size: 0.8rem;
+  line-height: 1.2;
+  color: #9e9e9e;
+}
+@media (max-width: 1350px) {
+  .prediction .inversion {
+    display: none;
+  }
+}
+.main .keyboard {
+  width: 90%;
+}
+.predictions .keyboard {
+  cursor: pointer;
+}
+@media (max-width: 1000px) {
+  .predictions .keyboard .note-name {
+    display: none;
+  }
+}
+

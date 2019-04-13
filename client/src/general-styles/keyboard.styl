@@ -1,0 +1,57 @@
+
+//-----------------------------------------------------------------------------
+// Base MainKeyboard Styling
+//-----------------------------------------------------------------------------
+
+.keyboard
+  .backing
+    fill: #6d6e74
+
+  .white-key
+    fill: #d1d1d1
+
+  .note-name
+    font-size: 48px
+    fill: #b4b4b4
+    font-family: Verdana
+
+  .black-key
+    fill: #090909
+    //filter: url(#pressed-key-shadow)
+
+//-----------------------------------------------------------------------------
+// Primary Styling
+//-----------------------------------------------------------------------------
+
+.keyboard
+  width: 100%
+
+  // block selecting key text & double clicking to 'select all'
+  user-select: none
+  -ms-user-select: none
+  -moz-user-select: none
+  -webkit-user-select: none
+
+  // prevent text from capturing clicks
+  .note-name
+    pointer-events: none
+
+  .white-key, .black-key
+    cursor: pointer
+
+
+//-----------------------------------------------------------------------------
+// Dynamic Styling
+//-----------------------------------------------------------------------------
+
+.keyboard
+  .white-key.pressed
+    fill: blue
+    //transform: scaleY(0.988)
+
+    + .note-name
+      fill: #cbcbcb
+
+  .black-key.pressed
+    fill: darkblue
+    //transform: scaleY(0.988)

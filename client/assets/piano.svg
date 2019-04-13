@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:key="piano-namespace" viewBox="0 0 1169 420">
+    <defs>
+        <!--<style>-->
+            <!--.backing{fill:#6d6e74;}-->
+            <!--.white-key{fill:#d1d1d1;}-->
+            <!--.note-name{font-size:48px; fill:#a7a7a7; font-family:Verdana;}-->
+            <!--.black-key{fill:#090909;}-->
+        <!--</style>-->
+
+        <filter id="top-bar-shadow" width="100" height="100">
+            <feOffset dy="6"/>
+            <feGaussianBlur stdDeviation="1" result="blur-1"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite operator="in" in2="blur-1"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+
+        <filter id="black-key-shadow" width="100" height="100">
+            <feOffset dx="4" dy="6"/>
+            <feGaussianBlur stdDeviation="1.5" result="blur-2"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite operator="in" in2="blur-2"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+
+        <filter id="pressed-key-shadow" width="100" height="100">
+            <feOffset dx="4" dy="4"/>
+            <feGaussianBlur stdDeviation="0.75" result="blur-3"/>
+            <feFlood flood-opacity=".3"/>
+            <feComposite operator="in" in2="blur-3"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+
+        <filter id="white-key-text-shadow" width="100" height="100">
+            <feOffset dx="0" dy="3"/>
+            <feGaussianBlur stdDeviation="3" result="blur-4"/>
+            <feFlood flood-opacity=".3"/>
+            <feComposite operator="in" in2="blur-4"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+
+    <path class="backing" d="M23,22H1143V409H23Z"/>
+    <path key:id="23" class="key-23 white-key" d="M1092,25h77V418a2,2,0,0,1-2,2h-73a2,2,0,0,1-2-2Z"/>
+    <text class="note-name" transform="translate(1114.05 394)">B</text>
+    <path key:id="21" class="key-21 white-key" d="M1008,25h77V418a2,2,0,0,1-2,2h-73a2,2,0,0,1-2-2Z"/>
+    <text class="note-name" transform="translate(1030.09 394)">A</text>
+    <path key:id="19" class="key-19 white-key" d="M924,25h77V418a2,2,0,0,1-2,2H926a2,2,0,0,1-2-2Z"/>
+    <text class="note-name" transform="translate(943.89 394)">G</text>
+    <path key:id="17" class="key-17 white-key" d="M840,25h77V418a2,2,0,0,1-2,2H842a2,2,0,0,1-2-2Z"/>
+    <text class="note-name" transform="translate(864.71 394)">F</text>
+    <path key:id="16" class="key-16 white-key" d="M756,25h77V418a2,2,0,0,1-2,2H758a2,2,0,0,1-2-2Z"/>
+    <text class="note-name" transform="translate(779.32 394)">E</text>
+    <path key:id="14" class="key-14 white-key" d="M672,25h77V418a2,2,0,0,1-2,2H674a2,2,0,0,1-2-2Z"/>
+    <text class="note-name" transform="translate(692.01 394)">D</text>
+    <path key:id="12" class="key-12 white-key" d="M588,25h77V418a2,2,0,0,1-2,2H590a2,2,0,0,1-2-2Z"/>
+    <text class="note-name" transform="translate(609.74 394)">C</text>
+    <path key:id="11" class="key-11 white-key" d="M504,25h77V418a2,2,0,0,1-2,2H506a2,2,0,0,1-2-2Z"/>
+    <text class="note-name" transform="translate(526.05 394)">B</text>
+    <path key:id="9" class="key-9 white-key" d="M420,25h77V418a2,2,0,0,1-2,2H422a2,2,0,0,1-2-2Z"/>
+    <text class="note-name" transform="translate(442.09 394)">A</text>
+    <path key:id="7" class="key-7 white-key" d="M336,25h77V418a2,2,0,0,1-2,2H338a2,2,0,0,1-2-2Z"/>
+    <text class="note-name" transform="translate(355.89 394)">G</text>
+    <path key:id="5" class="key-5 white-key" d="M252,25h77V418a2,2,0,0,1-2,2H254a2,2,0,0,1-2-2Z"/>
+    <text class="note-name" transform="translate(276.71 394)">F</text>
+    <path key:id="4" class="key-4 white-key" d="M168,25h77V418a2,2,0,0,1-2,2H170a2,2,0,0,1-2-2Z"/>
+    <text class="note-name" transform="translate(191.32 394)">E</text>
+    <path key:id="2" class="key-2 white-key" d="M84,25h77V418a2,2,0,0,1-2,2H86a2,2,0,0,1-2-2Z"/>
+    <text class="note-name" transform="translate(104.01 394)">D</text>
+    <path key:id="0" class="key-0 white-key" d="M0,25H77V418a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2Z"/>
+    <text class="note-name" transform="translate(21.74 394)">C</text>
+    <path key:id="22" class="key-22 black-key" d="M1062,25h53V307a3,3,0,0,1-3,3h-47a3,3,0,0,1-3-3Z"/>
+    <path key:id="20" class="key-20 black-key" d="M978,25h53V307a3,3,0,0,1-3,3H981a3,3,0,0,1-3-3Z"/>
+    <path key:id="18" class="key-18 black-key" d="M894,25h53V307a3,3,0,0,1-3,3H897a3,3,0,0,1-3-3Z"/>
+    <path key:id="15" class="key-15 black-key" d="M726,25h53V307a3,3,0,0,1-3,3H729a3,3,0,0,1-3-3Z"/>
+    <path key:id="13" class="key-13 black-key" d="M642,25h53V307a3,3,0,0,1-3,3H645a3,3,0,0,1-3-3Z"/>
+    <path key:id="10" class="key-10 black-key" d="M474,25h53V307a3,3,0,0,1-3,3H477a3,3,0,0,1-3-3Z"/>
+    <path key:id="8" class="key-8 black-key" d="M390,25h53V307a3,3,0,0,1-3,3H393a3,3,0,0,1-3-3Z"/>
+    <path key:id="6" class="key-6 black-key" d="M306,25h53V307a3,3,0,0,1-3,3H309a3,3,0,0,1-3-3Z"/>
+    <path key:id="3" class="key-3 black-key" d="M138,25h53V307a3,3,0,0,1-3,3H141a3,3,0,0,1-3-3Z"/>
+    <path key:id="1" class="key-1 black-key" d="M54,25h53V307a3,3,0,0,1-3,3H57a3,3,0,0,1-3-3Z"/>
+    <path filter="url(#top-bar-shadow)" d="M6,0H1163a6,6,0,0,1,6,6V25.5a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V6A6,6,0,0,1,6,0Z"/>
+</svg>

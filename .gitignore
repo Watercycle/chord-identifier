@@ -1,0 +1,12 @@
+# compiled rust files
+server/target
+**/*.rs.bk
+
+# ide files (jetbrains intellij)
+/.idea
+/client/.idea
+/server/.idea
+chord_identifier.iml
+
+# npm files
+/client/node_modules/

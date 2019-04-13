@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "pretty": true,
+    "target": "esnext",
+    "module": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "preserveConstEnums": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "lib": ["esnext", "dom"],
+    "types": [
+      "inferno",
+      "node",
+      "jest"
+    ],
+    "jsx": "preserve",
+    "noUnusedLocals": true,
+    "baseUrl": "./src",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    "src/**/*",
+    "tests/**/*",
+    "types/*",
+    "node_modules/inferno/dist/index.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
