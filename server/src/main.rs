@@ -6,10 +6,11 @@ extern crate rocket_file_cache;
 mod gzip;
 
 use std::path::{PathBuf, Path};
-use rocket::{State};
+use rocket::{State, Config};
 use rocket_file_cache::{Cache, CachedFile, CacheBuilder};
 use gzip::Gzip;
 use rocket::response::NamedFile;
+use std::env;
 
 #[get("/")]
 fn index() -> NamedFile {
@@ -29,6 +30,17 @@ fn files(file: PathBuf, cache: State<Cache>) -> CachedFile {
     CachedFile::open(path, cache.inner())
 }
 
+/// Configure Rocket to serve on the port requested by Heroku.
+fn configure() -> Config {
+    let mut config = Config::active().expect("could not load configuration");
+    if let Ok(port_str) = env::var("PORT") {
+        let port = port_str.parse().expect("could not parse PORT");
+        config.set_port(port);
+    }
+
+    config
+}
+
 fn main() {
     let cache: Cache = CacheBuilder::new()
         .size_limit(1024 * 1024 * 20) // 20 MB
@@ -36,6 +48,7 @@ fn main() {
         .unwrap();
 
     rocket::ignite()
+        .custom(configure())
         .attach(Gzip)
         .manage(cache)
         .mount("/", routes![index, service_worker, files])
