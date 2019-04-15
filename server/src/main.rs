@@ -24,7 +24,15 @@ fn service_worker() -> NamedFile {
     NamedFile::open(path).expect("You probably need to run `npm run build`.")
 }
 
-#[get("/<file..>")]
+// <file..> rejects hidden folders, so this is a manual route
+// used for the ACME SSL certificate setup.
+#[get("/.well-known/<file..>", rank = 1)]
+fn cheap_ssl(file: PathBuf) -> NamedFile {
+    let path = Path::new("public/.well-known/").join(file);
+    NamedFile::open(path).expect("Failed to get SSL ACME Certificate")
+}
+
+#[get("/<file..>", rank=2)]
 fn files(file: PathBuf, cache: State<Cache>) -> CachedFile {
     let path = Path::new("public/").join(file);
     CachedFile::open(path, cache.inner())
@@ -51,6 +59,6 @@ fn main() {
     rocket::custom(configure())
         .attach(Gzip)
         .manage(cache)
-        .mount("/", routes![index, service_worker, files])
+        .mount("/", routes![index, service_worker, files, cheap_ssl])
         .launch();
 }
